@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let obj = {}; let a = 0
+        console.log(a || a == 0 ? a : 'sas'); // "[object Object]" ?
+        let animal = {
+            eats: true
+        };
+
+        // 以 animal 为原型创建一个新对象
+        let rabbit = Object.create(animal);
+
+        console.log(rabbit); // true
+        console.log(Object.getPrototypeOf(rabbit) === animal); // 获取 rabbit 的原型
+
+        Object.setPrototypeOf(rabbit, {}); // 将 rabbit 的原型更改为 {}
+    </script>
+    <script>
+        let eventMixin = {
+            /**
+             * 订阅事件，用法：
+             *  menu.on('select', function(item) { ... }
+            */
+            on(eventName, handler) {
+                if (!this._eventHandlers) this._eventHandlers = {};
+                if (!this._eventHandlers[eventName]) {
+                    this._eventHandlers[eventName] = [];
+                }
+                this._eventHandlers[eventName].push(handler);
+            },
+
+            /**
+             * 取消订阅，用法：
+             *  menu.off('select', handler)
+             */
+            off(eventName, handler) {
+                let handlers = this._eventHandlers && this._eventHandlers[eventName];
+                if (!handlers) return;
+                for (let i = 0; i < handlers.length; i++) {
+                    if (handlers[i] === handler) {
+                        handlers.splice(i--, 1);
+                    }
+                }
+            },
+
+            /**
+             * 触发事件并传递参数
+             *  this.trigger('select', data1, data2);
+             */
+            trigger(eventName, ...args) {
+                if (!this._eventHandlers || !this._eventHandlers[eventName]) {
+                    return; // 对应事件名没有事件处理函数。
+                }
+
+                // 调用事件处理函数
+                this._eventHandlers[eventName].forEach(handler => handler.apply(this, args));
+            }
+        };
+        // 新建一个 class
+        class Menu {
+            choose(value) {
+                this.trigger("select", value);
+            }
+        }
+        // 添加 mixin
+        Object.assign(Menu.prototype, eventMixin);
+
+        let menu = new Menu();
+console.log(Object.assign(Menu.prototype, eventMixin), eventMixin,'////menu')
+        // 被选中时调用事件处理函数：
+        menu.on("select", value => alert(`Value selected: ${value}`));
+
+        // 触发事件 => 展示被选中的值：123
+        menu.choose("123"); // 被选中的值
+    </script>
+</body>
+
+</html>

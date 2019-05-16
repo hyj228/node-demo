@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // new Promise(function (resolve, reject) {
+
+        //     setTimeout(() => resolve(1), 1000); // (*)
+
+        // }).then(function (result) { // (**)
+
+        //     alert(result); // 1
+        //     return result * 2;
+
+        // }).then(function (result) { // (***)
+
+        //     alert(result); // 2
+        //     return result * 2;
+
+        // }).then(function (result) {
+
+        //     alert(result); // 4
+        //     return result * 2;
+
+        // });
+        // new Promise(function (resolve, reject) {
+
+        //     setTimeout(() => resolve(1), 1000);
+
+        // }).then(function (result) {
+
+        //     alert(result); // 1
+
+        //     // return new Promise((resolve, reject) => { // (*)
+        //     //     setTimeout(() => resolve(result * 2), 1000);
+        //     // });
+
+        // }).then(function (result) { // (**)
+
+        //     alert(result); // 2
+
+        //     // return new Promise((resolve, reject) => {
+        //     //     setTimeout(() => resolve(result * 2), 1000);
+        //     // });
+
+        // }).then(function (result) {
+
+        //     alert(result); // 4
+
+        // });
+        // var promise1 = new Promise(function (resolve, reject) {
+
+        // setTimeout(() => resolve({name:1,data:[122,1212,12,22,12]}), 1000); // (*)
+
+        // })
+        // console.log(promise1,'//promise1')
+        // promise1.then(function (data) {
+        //         console.log(data, "~~~")
+        //         var promise2 = new Promise(function (resolve, reject) {
+
+        //             setTimeout(() => resolve(2), 1000); // (*)
+
+        //         })
+        //         return promise2
+        //     }, function (err) {
+        //         console.log(err.message, ">>>>")
+        //     })
+        //     .then(function (data) {
+        //         console.log(data, "~~~")
+        //     }, function (err) {
+        //         console.log(err.message, ">>>>")
+        //     })
+        // 生成一个Promise对象的数组
+        const promises = [2, 3, 5, 7, 11, 13].map(function (id) {
+            return [12,1,12,12];
+        });
+
+        Promise.all(promises).then(function (posts) {
+            // ...
+            console.log(posts,'/posts')
+        }).catch(function (reason) {
+            // ...
+            console.log(reason,'/reason')
+        });
+    </script>
+</body>
+
+</html>

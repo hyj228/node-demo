@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="content-type" content="text/html;charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .box {
+            font-size: 28rem;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">1212121212</div>
+    <script>
+        // console.log=function(){}
+        let obj = {
+            init: function (str) {
+                console.log(this, '////')
+                this.windowSize()
+            },
+            windowSize() {
+                let wSize = ((window.innerWidth || res.currentTarget.innerWidth) / 750) + 'px'
+                document.querySelectorAll('html')[0].setAttribute('style', 'font-size:' + wSize)
+            }
+        }
+        window.onload = function (res) {
+            obj.init()
+        }
+
+        window.onresize = function (res) {
+            let wSize = 1 / 750 * window.innerWidth + 'px'
+            document.querySelectorAll('html')[0].setAttribute('style', 'font-size:' + wSize)
+        }
+
+    </script>
+</body>
+
+</html>

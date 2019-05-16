@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+
+        console.log(new Date().toLocaleTimeString(), new Date().toString())
+
+        // Date()	返回当日的日期和时间。
+        console.log(new Date().getDate())	//从 Date 对象返回一个月中的某一天 (1 ~ 31)。
+        console.log(new Date().getDay())	//从 Date 对象返回一周中的某一天 (0 ~ 6)。
+        console.log(new Date().getMonth())	//从 Date 对象返回月份 (0 ~ 11)。
+        console.log(new Date().getFullYear())	//从 Date 对象以四位数字返回年份。
+        console.log(new Date().getYear())	//请使用 getFullYear() 方法代替。
+        console.log(new Date().getHours())	//返回 Date 对象的小时 (0 ~ 23)。
+        console.log(new Date().getMinutes())	//返回 Date 对象的分钟 (0 ~ 59)。
+        console.log(new Date().getSeconds())	//返回 Date 对象的秒数 (0 ~ 59)。
+        console.log(new Date().getMilliseconds())		//返回 Date 对象的毫秒(0 ~ 999)。
+        console.log(new Date().getTime())		//返回 1970 年 1 月 1 日至今的毫秒数。
+        console.log(new Date().getTimezoneOffset())		//返回本地时间与格林威治标准时间 (GMT) 的分钟差。
+        console.log(new Date().getUTCDate())		//根据世界时从 Date 对象返回月中的一天 (1 ~ 31)。
+        console.log(new Date().getUTCDay())		//根据世界时从 Date 对象返回周中的一天 (0 ~ 6)。
+        console.log(new Date().getUTCMonth())	//根据世界时从 Date 对象返回月份 (0 ~ 11)。
+        console.log(new Date().getUTCFullYear())		//根据世界时从 Date 对象返回四位数的年份。
+        console.log(new Date().getUTCHours())	//根据世界时返回 Date 对象的小时 (0 ~ 23)。
+        console.log(new Date().getUTCMinutes())		//根据世界时返回 Date 对象的分钟 (0 ~ 59)。
+        console.log(new Date().getUTCSeconds())		//根据世界时返回 Date 对象的秒钟 (0 ~ 59)。
+        console.log(new Date().getUTCMilliseconds())	//根据世界时返回 Date 对象的毫秒(0 ~ 999)。
+        console.log(Date.parse("2005-12-12"))	//返回1970年1月1日午夜到指定日期（字符串）的毫秒数。
+        console.log(new Date().setDate(15))	//设置 Date 对象中月的某一天 (1 ~ 31)。
+        console.log(new Date().setMonth(12))	//设置 Date 对象中月份 (0 ~ 11)。
+        console.log(new Date().setFullYear(2015))	//设置 Date 对象中的年份（四位数字）。
+        console.log(new Date().setYear(4))	//请使用 setFullYear() 方法代替。
+        console.log(new Date().setHours(5))		//设置 Date 对象中的小时 (0 ~ 23)。
+        console.log(new Date().setMinutes(6))		//设置 Date 对象中的分钟 (0 ~ 59)。
+        console.log(new Date().setSeconds(7))		//设置 Date 对象中的秒钟 (0 ~ 59)。
+        console.log(new Date().setMilliseconds(4))	//设置 Date 对象中的毫秒 (0 ~ 999)。
+        console.log(new Date().setTime(4))		//以毫秒设置 Date 对象。
+        console.log(new Date().setUTCDate(1))		//根据世界时设置 Date 对象中月份的一天 (1 ~ 31)。
+        console.log(new Date().setUTCMonth(1))	//根据世界时设置 Date 对象中的月份 (0 ~ 11)。
+        console.log(new Date().setUTCFullYear(2111))		//根据世界时设置 Date 对象中的年份（四位数字）。
+        console.log(new Date().setUTCHours(1))	//根据世界时设置 Date 对象中的小时 (0 ~ 23)。
+        console.log(new Date().setUTCMinutes(1))		//根据世界时设置 Date 对象中的分钟 (0 ~ 59)。
+        console.log(new Date().setUTCSeconds(12))	//根据世界时设置 Date 对象中的秒钟 (0 ~ 59)。
+        console.log(new Date().setUTCMilliseconds(555))		//根据世界时设置 Date 对象中的毫秒 (0 ~ 999)。
+        console.log(new Date().toString())		//把 Date 对象转换为字符串。
+        console.log(new Date().toTimeString())		//把 Date 对象的时间部分转换为字符串。
+        console.log(new Date().toDateString())		//把 Date 对象的日期部分转换为字符串。
+        console.log(new Date().toGMTString())	//请使用 toUTCString() 方法代替。
+        console.log(new Date().toUTCString())	//根据世界时，把 Date 对象转换为字符串。
+        console.log(new Date().toLocaleString())	//根据本地时间格式，把 Date 对象转换为字符串。
+        console.log(new Date().toLocaleTimeString())		//根据本地时间格式，把 Date 对象的时间部分转换为字符串。
+        console.log(new Date().toLocaleDateString())	//根据本地时间格式，把 Date 对象的日期部分转换为字符串。
+        console.log(Date.UTC(2005,7,8))	//根据世界时返回 1970 年 1 月 1 日 到指定日期的毫秒数。
+        console.log(new Date().valueOf()) 		//返回 Date 对象的原始值。
+    </script>
+</body>
+
+</html>

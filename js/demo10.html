@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        var sMap = new Map();
+        sMap.set('list', "aadd")
+        console.log(sMap.get('list'))
+        let set = new Set();
+
+        let john =[ { name: "Pete2" },{ name: "Pete3" },{ name: "Pete4" },{ name: "Pete" },{ name: "Pete" },{ name: "Pete" },{ name: "John" }];
+        // let pete = { name: "Pete" };
+        // let mary = { name: "Mary" };
+
+        // 访客，一些用户来了多次
+        john.map(el=>{
+            set.add(el);
+        })
+        
+        // set.add(pete);
+        // set.add(mary);
+        // set.add(john);
+        // set.add(mary);
+        // setTimeout(() => {
+            
+        //     console.log(set,...john)
+        // }, 1000);
+        // set 保证了值的唯一
+        console.log(set.size); // 3
+
+        for (let user of set) {
+            console.log(user.name,'//////name'); // John（然后是 Pete 和 Mary）
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>类型</title>
+</head>
+<body>
+    <script>
+        alert( "\u{1F60D}" );
+    alert( 9999999999999999 )
+        alert(1e-6)
+        console.log(typeof  null)
+        console.log(typeof  undefined)
+        console.log(typeof  alert)
+        console.log(typeof  [1,2,3])
+        let id = Symbol("id");
+        let user = {
+        name: "John",
+        age: 30,
+        [id]: 123
+        };
+
+        for (let key in user) alert(key); // name, age (no symbols)
+
+        // 被 Symbol 任务直接访问
+        alert( "Direct: " + user[id] );
+        alert( 7.3e9 );
+    </script>
+</body>
+</html>
