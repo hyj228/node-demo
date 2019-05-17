@@ -38,3 +38,4 @@ ChooseType()
             // time2[0].value = str;
             console.log(str, '//////')
         }
+        // 选择后7个月的日期
