@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // https://juejin.im/post/5cd24b59e51d453a8f348bca 掘金地址
+        // 字符串 去除空格
+        String.prototype.trim = function () { return this.replace(/^\s+|\s+$/g, ""); };
+        // 生成随机的字母数字字符串
+        function generateRandomAlphaNum(len) {
+            var rdmString = "";
+            for (; rdmString.length < len; rdmString += Math.random().toString(36).substr(2));
+            return rdmString.substr(0, len);
+        }
+        // 打乱数字数组的顺序
+        var numbers = [5, 458, 120, -215, 228, 400, 122205, -85411];
+        numbers = numbers.sort(function () { return Math.random() - 0.5 });
+        /* numbers 数组将类似于 [120, 5, 228, -215, 400, 458, -85411, 122205]  */
+
+
+    </script>
+</body>
+
+</html>
